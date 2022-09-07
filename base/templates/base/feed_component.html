@@ -13,9 +13,13 @@
             </div>
             <div class="roomListRoom__content">
                 <a href="{% url 'room' room.id %}">{{room.name}}</a>
-                <p>
-                    {{room.description}}
-                </p>
+
+                {% if room.description != null and room.description|length > 160 %}
+                    <p>
+                        {{room.description | truncatechars:160}}
+                    </p>
+                {% endif %}
+
             </div>
             <div class="roomListRoom__meta">
                 <a href="{% url 'room' room.id %}" class="roomListRoom__joined">

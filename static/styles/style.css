@@ -967,7 +967,7 @@ a {
   max-height: 30vh;
   overflow-y: auto;
   position: absolute;
-  width: 95%;
+  width: calc(100% - 2rem);
   background: var(--color-dark);
   z-index: 999;
   top: 4.4rem;
